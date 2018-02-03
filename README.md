@@ -5,7 +5,7 @@ The project was created for PHPStorm and his file watchers.
 ```
 Not include npm modules or else.
 ```
-File warcher for PUG wtcher on windows:
+File watcher for PUG wtcher on windows:
 
 <p align="center">
   <img width="460" height="300" src="http://dl3.joxi.net/drive/2018/02/03/0006/3345/417041/41/81152f3f34.jpg">

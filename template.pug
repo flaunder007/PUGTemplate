@@ -8,15 +8,17 @@ include blocks/footer/footer
 
 html(lang="ru-RU", manifest="default.appcache")
 	head
-		+head({
-			"title": "someTitle"
-		})
-		block headAdd
+		block head
+			+head({
+				"title": "someTitle"
+			})
 	body
 		+b.DIV.wrapper
+			//header
 			block header
 				+header('Title')
+			//content
 			block content
-
+			//footer
 			block footer
 				+footer()

@@ -1,4 +1,21 @@
 extends ../template
 
+block head
+	+head({
+		title: 'New Title',
+		maincss: "./main.css"
+	})
+
 block content
-	+content
+	+content()
+	+btn({link: '#', text: 'button'}, {class:'--mod'})
+	+list(["obj1", "obj2", "obj3", "obj4"], {itemsAttr: {attr:'value'}}).list(listattr= 'value')
+	+b.TABLE.someTable
+		- var tableAttr= {cellAttr: {class: "cell"}}
+		+row(['row1 cell1', 'row1 cell2', 'row1 cell3', 'row1 cell4'], {cellAttr: {class: "cell"}}).row
+		+row(['row2 cell1', 'row2 cell2', 'row2 cell3', 'row2 cell4'], tableAttr).row(class='--mod')
+		+e.TR.row
+			+e.TD.cell row3 cell1
+			+e.TD.cell row3 cell2
+			+e.TD.cell row3 cell3
+			+e.TD.cell row3 cell4

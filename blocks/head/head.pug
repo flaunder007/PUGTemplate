@@ -41,7 +41,7 @@ mixin head(data)
 	if data.replyTo
 		meta(http-equiv="Reply-to" content="data.replyTo")
 	<!-- saved from url=(0014)about:internet -->
-	link(href="main.css", type="text/css", rel="stylesheet")
+	link(href=data.maincss ? data.maincss : "main.css", type="text/css", rel="stylesheet")
 
 //- form
 mixin f(data, attr)

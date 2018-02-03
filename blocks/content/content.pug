@@ -1,2 +1,26 @@
-mixin content()
-	+b.content
+//- here is a mixins that made for content block
+mixin content(data)
+	+b.content #{data}
+
+//- btn template
+mixin btn(content)
+	+b.A.btn(href=content.link)&attributes(attributes) #{content.text}
+
+//- list template
+mixin list(items, settings)
+	if settings.ol
+		+b.OL()&attributes(attributes)
+			each item in items
+				+e.LI(class=attributes.class ? "item" : false)&attributes(settings.itemsAttr) #{item}
+	else
+		+b.UL()&attributes(attributes)
+			each item in items
+				+e.LI(class=attributes.class ? "item" : false)&attributes(settings.itemsAttr) #{item}
+
+//- table row
+mixin row(items, settings)
+	if !settings
+		- var settings = {}
+	+e.TR()&attributes(attributes)
+		each item in items
+			+e.TD()&attributes(settings.cellAttr)= item

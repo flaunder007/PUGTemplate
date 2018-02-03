@@ -1,0 +1,22 @@
+doctype html
+include pugmodules/bemto/bemto
+include blocks/head/head
+include blocks/header/header
+include blocks/content/content
+include blocks/footer/footer
+-set_bemto_settings({modifier: "--"})
+
+html(lang="ru-RU", manifest="default.appcache")
+	head
+		+head({
+			"title": "someTitle"
+		})
+		block headAdd
+	body
+		+b.DIV.wrapper
+			block header
+				+header('Title')
+			block content
+
+			block footer
+				+footer()

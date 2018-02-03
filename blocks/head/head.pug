@@ -1,0 +1,65 @@
+//- default header block
+mixin head(data)
+	meta(charset="UTF-8")
+	//- mobile friendly tags
+	meta(name="viewport", content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, maximum-scale=1.0")
+	meta(name="HandheldFriendly", content="true")
+	meta(name="format-detection", content="telephone=no")
+	meta(http-equiv="cleartype", content="on")
+	//- apple icons
+	if data.appleTochStartup
+		link(rel="apple-touch-startup-image", href=data.appleTochStartup)
+	if data.appleTochIcon
+		link(rel="apple-touch-icon", href=data.appleTochIcon)
+	if data.appleTochIconIpad
+		link(rel="apple-touch-icon", sizes="72x72", href=data.appleTochIconIpad)
+	if data.appleTochIconRetina
+		link(rel="apple-touch-icon", sizes="114x114", href=data.appleTochIconRetina)
+	if data.appleTochIconIpadRetina
+		link(rel="apple-touch-icon", sizes="144x144", href=data.appleTochIconIpadRetina)
+	//- apple friendly tags
+	meta(name="apple-mobile-web-app-capable", contrnt="yes")
+	meta(name="apple-mobile-web-app-status-bar-style", content="black-translucent")
+	meta(name="application-name", content=data.title)
+	//- MS friendly tags
+	if data.description
+		meta(name="msapplication-tooltip", content=data.description )
+	meta(http-equiv="X-UA-Compatible", content="IE=edge")
+	meta(http-equiv="imagetoolbar", content="no")
+	meta(http-equiv="msthemecompatible" content="no")
+	meta(name="format-detection" content="telephone=no")
+	meta(name="format-detection" content="address=no")
+	//- SEO tags
+	title=data.title
+	if data.description
+		meta(name="description" content=data.description)
+	if data.keywords
+		meta(name="keywords" content=data.keywords)
+	if data.author
+		meta(name="keywords" content=data.author)
+		meta(name="copyright" content='(c)')
+	if data.replyTo
+		meta(http-equiv="Reply-to" content="data.replyTo")
+	<!-- saved from url=(0014)about:internet -->
+	link(href="main.css", type="text/css", rel="stylesheet")
+
+//- form
+mixin f(data, attr)
+	if !data
+		-data={};
+	form(method=data.method ? data.method : 'POST', action=data.action ? data.action : '')&attributes(attr): block
+
+//- input type text
+mixin i_t(data, attr)
+	input(type="text", placeholder=data.placeholder, name= data.name, class=data.class, required=data.required,
+	autocomplete="on", spellcheck="true", autocapitalize="off", autocorrect="off",
+	maxlength=data.maxlength ? data.maxlength : "30", pattern="^[А-Яа-я\s\-\_0-9]+$",  x-webkit-speech)&attributes(attr)
+
+//- input type textarea
+mixin i_ta(data, attr)
+	textarea(placeholder=data.placeholder, name=data.name, class=data.class, required=data.required, spellcheck="true",
+	autocapitalize="off", autocorrect="off", x-webkit-speech)&attributes(attr)
+
+//- input type button
+mixin i_b(data, attr)
+	button(type=data.submit ? "submit" : false, name=data.name, class=data.class, value=data.value)&attributes(attr) #{data.text}

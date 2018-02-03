@@ -1,0 +1,15 @@
+mixin footer()
+	//SEO schema
+	footer(itemscope itemtype="http://schema.org/LocalBusiness")
+		+b(itemprop="address" itemscope itemtype="http://schema.org/PostalAddress")
+			span(itemprop="streetAddress")
+			|
+			|
+			span(itemprop="addressLocality")
+			|
+			|
+			span(itemprop="addressRegion")
+			|
+			|
+			span(itemprop="addressCountry", content="RU")
+			+b.copy

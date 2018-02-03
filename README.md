@@ -1,5 +1,5 @@
 # PUGTemplate
-Template for creation pages layouts with PUG, SsSS and BEMTO PUG module
+Template for creation pages layouts with PUG, Sass and BEMTO PUG module
 
 The project was created for PHPStorm and his file watchers.
 ```
@@ -17,7 +17,7 @@ Arguments:  $FileName$ --pretty
 Output:     $FileNameWithoutExtension$.html
 ```
 
-For SaSS:
+For Sass:
 
 <p align="center">
   <img width="460" height="300" src="http://dl4.joxi.net/drive/2018/02/03/0006/3345/417041/41/b7779c00d3.jpg">
@@ -28,3 +28,6 @@ Program:    C:\Ruby22-x64\bin\sass.bat
 Arguments:  --no-cache --update $FileName$:$FileNameWithoutExtension$.css --style compact
 Output:     $FileNameWithoutExtension$.css:$FileNameWithoutExtension$.css.map
 ```
+Links:
+[a link](https://pugjs.org/api/getting-started.html) - PUG documentation
+[a link](https://sass-lang.com/documentation/file.SASS_REFERENCE.html) - Sass documentation

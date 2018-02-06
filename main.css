@@ -12,9 +12,8 @@ blockquote:before, blockquote:after, q:before, q:after { content: ""; content: n
 table { border-collapse: collapse; border-spacing: 0; }
 
 /* Author:  Elijah Rubkin - WEB-developer sawtech Author URI: http://sawtech.ru/ */
-.wrapper { margin: 0 auto; box-sizing: border-box; max-width: 1280px; min-width: 960px; }
-@media all and (max-width: 590px) { .wrapper { width: 100%; min-width: 0; max-width: none; } }
-
 /***********************blocks********************** */
+.wrapper { width: 25%; }
+@media all and (max-width: 590px) { .wrapper { width: 100%; display: block; } }
 
 /*# sourceMappingURL=main.css.map */

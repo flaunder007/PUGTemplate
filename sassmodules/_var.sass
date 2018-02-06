@@ -111,3 +111,12 @@ $main_font: Arial
 	-moz-backface-visibility: $value
 	-o-backface-visibility: $value
 	backface-visibility: $value
+
+=respond-to($name)
+	@if $name == small-screen
+		@media #{$mobile}
+			@content
+
+	@if $name == large-screen
+		@media #{$desktop_middle}
+			@content

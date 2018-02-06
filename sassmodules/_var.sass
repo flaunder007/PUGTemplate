@@ -113,10 +113,18 @@ $main_font: Arial
 	backface-visibility: $value
 
 =respond-to($name)
-	@if $name == small-screen
+	@if $name == mobile
 		@media #{$mobile}
 			@content
 
-	@if $name == large-screen
+	@if $name == desctop-small
+		@media #{$desktop_small}
+			@content
+
+	@if $name == desctop-middle
 		@media #{$desktop_middle}
+			@content
+
+	@if $name == desctop-big
+		@media #{$desktop_big}
 			@content

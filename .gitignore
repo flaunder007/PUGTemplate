@@ -7,7 +7,6 @@ out
 gen### Sass template
 .sass-cache/
 *.css.map
-*.css
 ##unnesesary html files.
 blocks/**/*.html
 pugmodules/**/*.html
